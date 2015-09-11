@@ -8,7 +8,7 @@ namespace SimpleCalendar\Feeds;
 
 use Carbon\Carbon;
 use SimpleCalendar\Abstracts\Feed;
-use SimpleCalendar\Events\Standard;
+use SimpleCalendar\Events\Event;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -253,7 +253,7 @@ class Blog_Feed extends Feed {
 					$start_utc = $end_utc = Carbon::parse( $post->post_date_gmt, 'UTC' )->getTimestamp();
 
 					// Build the event.
-					$events[ intval( $start_utc ) ][] = new Standard( array(
+					$events[ intval( $start_utc ) ][] = new Event( array(
 						'title'          => $post->post_title,
 						'description'    => $post->post_excerpt,
 						'link'           => get_permalink( $post->ID ),
