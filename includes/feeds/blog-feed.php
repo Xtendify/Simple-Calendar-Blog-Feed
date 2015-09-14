@@ -249,8 +249,11 @@ class Blog_Feed extends Feed {
 
 				foreach ( $posts as $post ) {
 
-					$start = $end = Carbon::parse( $post->post_date, $timezone )->getTimestamp();
-					$start_utc = $end_utc = Carbon::parse( $post->post_date_gmt, 'UTC' )->getTimestamp();
+					$post_date = Carbon::parse( $post->post_date, $timezone );
+					$post_date_utc = Carbon::parse( $post->post_date_gmt, 'UTC' );
+
+					$start = $end = $post_date->getTimestamp();
+					$start_utc = $end_utc = $post_date_utc->getTimestamp();
 
 					// Build the event.
 					$events[ intval( $start_utc ) ][] = new Event( array(
@@ -258,7 +261,7 @@ class Blog_Feed extends Feed {
 						'description'    => $post->post_excerpt,
 						'link'           => get_permalink( $post->ID ),
 						'visibility'     => 'public',
-						'uid'            => $post->ID,
+						'uid'            => $post_date_utc->format( 'Ymd' ) . $post->ID . '@' . $_SERVER['SERVER_NAME'],
 						'feed'           => $this->feed_id,
 						'calendar'       => $this->calendar_id,
 						'start'          => $start,
