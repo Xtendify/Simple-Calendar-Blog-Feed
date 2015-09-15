@@ -39,7 +39,7 @@ class Blog_Feed extends Feed {
 		parent::__construct( $calendar );
 
 		$this->type = 'blog-feed';
-		$this->name = __( 'Blog Feed', 'simple-calendar' );
+		$this->name = __( 'Blog Posts Feed', 'simple-calendar' );
 
 		if ( $this->calendar_id > 0 ) {
 			$this->feed_id = $this->calendar_id;
