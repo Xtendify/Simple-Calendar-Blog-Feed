@@ -255,15 +255,17 @@ class Blog_Feed extends Feed {
 					$start = $end = $post_date->getTimestamp();
 					$start_utc = $end_utc = $post_date_utc->getTimestamp();
 
+					$uid = $post_date_utc->format( 'Ymd' ) . $post->ID . '@' . $_SERVER['SERVER_NAME'];
+
 					// Build the event.
-					$events[ intval( $start_utc ) ][] = new Event( array(
-						'title'          => $post->post_title,
-						'description'    => $post->post_excerpt,
+					$events[ intval( $start_utc ) ][] = array(
+						'title'          => esc_attr( $post->post_title ),
+						'description'    => wp_kses_post( $post->post_excerpt ),
 						'link'           => get_permalink( $post->ID ),
 						'visibility'     => 'public',
-						'uid'            => $post_date_utc->format( 'Ymd' ) . $post->ID . '@' . $_SERVER['SERVER_NAME'],
-						'feed'           => $this->feed_id,
+						'uid'            => $uid,
 						'calendar'       => $this->calendar_id,
+						'timezone'       => $this->timezone,
 						'start'          => $start,
 						'start_utc'      => $start_utc,
 						'start_timezone' => $timezone,
@@ -276,7 +278,7 @@ class Blog_Feed extends Feed {
 						'multiple_days'  => false,
 						'recurrence'     => false,
 						'meta'           => array(),
-					) );
+					);
 
 				}
 
