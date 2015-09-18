@@ -9,7 +9,7 @@
  * Author:      Moonstone Media
  * Author URI:  http://moonstonemediagroup.com
  *
- * Text Domain: simple-calendar
+ * Text Domain: simple-calendar-blog-feed
  * Domain Path: /languages/
  *
  * @package     SimpleCalendar/BlogFeed

@@ -27,9 +27,9 @@ class Add_On_Blog_Feed {
 	 * Load Localization files.
 	 */
 	public function l10n() {
-		$locale = apply_filters( 'plugin_locale', get_locale(), 'simple-calendar' );
-		load_textdomain( 'simple-calendar', WP_LANG_DIR . '/google-calendar-events/simple-calendar-' . $locale . '.mo' );
-		load_plugin_textdomain( 'simple-calendar', false, plugin_basename( SIMCAL_BLOG_FEED_MAIN_FILE ) . 'languages' );
+		$locale = apply_filters( 'plugin_locale', get_locale(), 'simple-calendar-blog-feed' );
+		load_textdomain( 'simple-calendar-blog-feed', WP_LANG_DIR . '/simple-calendar-blog-feed/simple-calendar-blog-feed' . $locale . '.mo' );
+		load_plugin_textdomain( 'simple-calendar-blog-feed', false, plugin_basename( SIMCAL_BLOG_FEED_MAIN_FILE ) . 'languages' );
 	}
 
 	/**

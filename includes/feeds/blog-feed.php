@@ -39,7 +39,7 @@ class Blog_Feed extends Feed {
 		parent::__construct( $calendar );
 
 		$this->type = 'blog-feed';
-		$this->name = __( 'Blog Posts', 'simple-calendar' );
+		$this->name = __( 'Blog Posts', 'simple-calendar-blog-feed' );
 
 		if ( $this->calendar_id > 0 ) {
 			$this->feed_id = $this->calendar_id;
@@ -83,7 +83,7 @@ class Blog_Feed extends Feed {
 					'simcal-feed-type',
 					'simcal-feed-type-blog-feed',
 				),
-				'icon'   => 'simcal-icon-docs'
+				'icon'   => 'simcal-icon-wordpress'
 			),
 		) );
 	}
@@ -99,11 +99,11 @@ class Blog_Feed extends Feed {
 		<div id="blog-feed-settings-panel" class="simcal-panel">
 			<table>
 				<thead>
-					<tr><th colspan="2"><?php _e( 'Blog Feed settings', 'simple-calendar' ); ?></th></tr>
+					<tr><th colspan="2"><?php _e( 'Blog Feed settings', 'simple-calendar-blog-feed' ); ?></th></tr>
 				</thead>
 				<tbody class="simcal-panel-section">
 					<tr class="simcal-panel-field">
-						<th><label for="_blog_feed_posts_source"><?php _e( 'Posts', 'simple-calendar' ); ?></label></th>
+						<th><label for="_blog_feed_posts_source"><?php _e( 'Posts', 'simple-calendar-blog-feed' ); ?></label></th>
 						<td>
 							<?php
 
@@ -116,8 +116,8 @@ class Blog_Feed extends Feed {
 								id="_blog_feed_posts_source"
 								class="simcal-field simcal-field-select simcal-field-inline simcal-field-show-next"
 								data-show-next-if-value="category">
-								<option value="all" <?php selected( 'all', $source, true ); ?>><?php _e( 'All posts', 'simple-calendar' ); ?></option>
-								<option value="category" data-show-next="_blog_feed_posts_category" <?php selected( 'category', $source, true ); ?>><?php _e( 'Posts in category', 'simple-calendar' ); ?></option>
+								<option value="all" <?php selected( 'all', $source, true ); ?>><?php _e( 'All posts', 'simple-calendar-blog-feed' ); ?></option>
+								<option value="category" data-show-next="_blog_feed_posts_category" <?php selected( 'category', $source, true ); ?>><?php _e( 'Posts in category', 'simple-calendar-blog-feed' ); ?></option>
 							</select>
 							<br><br>
 							<?php
@@ -146,7 +146,7 @@ class Blog_Feed extends Feed {
 									'enhanced'    => 'enhanced',
 									'style'       => 'category' == $source ? '' : array( 'display' => 'none' ),
 									'attributes'  => array(
-										'data-noresults' => __( 'No results found.', 'simple-calendar' ),
+										'data-noresults' => __( 'No results found.', 'simple-calendar-blog-feed' ),
 									)
 
 								) );
