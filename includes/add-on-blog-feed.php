@@ -2,7 +2,8 @@
 /**
  * Simple Calendar - Blog Feed add on
  *
- * @package SimpleCalendar/BlogFeed
+ * @package     SimpleCalendar/Extensions
+ * @subpackage  BlogFeed
  */
 namespace SimpleCalendar;
 use SimpleCalendar\Feeds\Blog_Feed;

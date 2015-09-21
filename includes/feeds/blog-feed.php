@@ -2,7 +2,8 @@
 /**
  * Blog Feed
  *
- * @package SimpleCalendar/BlogFeed/Feeds
+ * @package    SimpleCalendar/Feeds
+ * @subpackage BlogFeed
  */
 namespace SimpleCalendar\Feeds;
 
@@ -94,7 +95,7 @@ class Blog_Feed extends Feed {
 	 * @param int $post_id
 	 */
 	public function add_settings_meta_panel( $post_id ) {
-		
+
 		?>
 		<div id="blog-feed-settings-panel" class="simcal-panel">
 			<table>
@@ -169,13 +170,13 @@ class Blog_Feed extends Feed {
 	 * @param int $post_id
 	 */
 	public function process_meta( $post_id ) {
-		
+
 		$source = isset( $_POST['_blog_feed_posts_source'] ) ? sanitize_key( $_POST['_blog_feed_posts_source'] ) : 'ids';
 		update_post_meta( $post_id, '_blog_feed_posts_source', $source );
-		
+
 		$categories = isset( $_POST['_blog_feed_posts_category'] ) ? array_map( 'absint', $_POST['_blog_feed_posts_category'] ) : '';
 		update_post_meta( $post_id, '_blog_feed_posts_category', $categories );
-				
+
 	}
 
 	/**

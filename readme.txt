@@ -15,6 +15,12 @@ An add on for [Simple Calendar](http://simplecalendar.io) to create calendars fe
 
 == Installation ==
 
+You will need Simple Calendar (3.0.0 and above) installed and active to use this plugin or it won't do anything. 
+
+Navigate to the WordPress plugins dashboard page, click on 'Add New', search for 'Simple Calendar Blog Feed', install and activate.
+
+Now you can create a new calendar featuring your blog posts or mix your blog posts with another calendar.
+
 == Changelog ==
 
 = 1.0.0 =

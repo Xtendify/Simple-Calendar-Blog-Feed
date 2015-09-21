@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Simple Calendar - Blog Feed
  * Plugin URI:  https://wordpress.org/plugins/simple-calendar-blog-feed/
- * Description: Use Simple Calendar with Advanced Custom Fields.
+ * Description: Display your WordPress blog posts as Simple Calendar events.
  *
  * Version:     1.0.0
  *
@@ -12,7 +12,8 @@
  * Text Domain: simple-calendar-blog-feed
  * Domain Path: /languages/
  *
- * @package     SimpleCalendar/BlogFeed
+ * @package     SimpleCalendar/Extensions
+ * @subpackage  BlogFeed
  * @copyright   2014-2015 Moonstone Media/Phil Derksen. All rights reserved.
  */
 
