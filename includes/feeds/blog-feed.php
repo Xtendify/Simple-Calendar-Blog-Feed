@@ -42,8 +42,8 @@ class Blog_Feed extends Feed {
 		$this->type = 'blog-feed';
 		$this->name = __( 'Blog Posts', 'simple-calendar-blog-feed' );
 
-		if ( $this->calendar_id > 0 ) {
-			$this->feed_id = $this->calendar_id;
+		if ( $this->post_id > 0 ) {
+			$this->feed_id = $this->post_id;
 			$this->set_query_args();
 			$this->events  = $this->get_events();
 		}
@@ -57,15 +57,6 @@ class Blog_Feed extends Feed {
 
 			add_action( 'simcal_process_settings_meta', array( $this, 'process_meta' ), 10, 1 );
 		}
-	}
-
-	/**
-	 * The blog feed has no settings.
-	 *
-	 * @return array
-	 */
-	public function settings_fields() {
-		return array();
 	}
 
 	/**
@@ -84,7 +75,7 @@ class Blog_Feed extends Feed {
 					'simcal-feed-type',
 					'simcal-feed-type-blog-feed',
 				),
-				'icon'   => 'simcal-icon-wordpress'
+				'icon'   => 'simcal-icon-wordpress',
 			),
 		) );
 	}
@@ -210,11 +201,11 @@ class Blog_Feed extends Feed {
 				)
 			);
 
-			$source = esc_attr( get_post_meta( $this->calendar_id, '_blog_feed_posts_source', true ) );
+			$source = esc_attr( get_post_meta( $this->post_id, '_blog_feed_posts_source', true ) );
 
 			if ( 'category' == $source ) {
 
-				$categories = get_post_meta( $this->calendar_id, '_blog_feed_posts_category', true );
+				$categories = get_post_meta( $this->post_id, '_blog_feed_posts_category', true );
 
 				if ( $categories && is_array( $categories ) ) {
 
@@ -236,7 +227,7 @@ class Blog_Feed extends Feed {
 	 */
 	public function get_events() {
 
-		$cached = get_transient( '_simple-calendar_feed_id_' . strval( $this->calendar_id ) . '_' . $this->type );
+		$cached = get_transient( '_simple-calendar_feed_id_' . strval( $this->post_id ) . '_' . $this->type );
 		$events = ! empty( $cached ) ? $cached : array();
 
 		$args = $this->query_args;
@@ -260,12 +251,12 @@ class Blog_Feed extends Feed {
 
 					// Build the event.
 					$events[ intval( $start_utc ) ][] = array(
-						'title'          => esc_attr( $post->post_title ),
-						'description'    => wp_kses_post( $post->post_excerpt ),
+						'title'          => $post->post_title,
+						'description'    => $post->post_excerpt,
 						'link'           => get_permalink( $post->ID ),
 						'visibility'     => 'public',
 						'uid'            => $uid,
-						'calendar'       => $this->calendar_id,
+						'calendar'       => $this->post_id,
 						'timezone'       => $this->timezone,
 						'start'          => $start,
 						'start_utc'      => $start_utc,
@@ -279,6 +270,7 @@ class Blog_Feed extends Feed {
 						'multiple_days'  => false,
 						'recurrence'     => false,
 						'meta'           => array(),
+						'template'       => $this->events_template,
 					);
 
 				}
@@ -286,7 +278,7 @@ class Blog_Feed extends Feed {
 				ksort( $events );
 
 				set_transient(
-					'_simple-calendar_feed_id_' . strval( $this->calendar_id ) . '_' . $this->type,
+					'_simple-calendar_feed_id_' . strval( $this->post_id ) . '_' . $this->type,
 					$events,
 					absint( $this->cache )
 				);
