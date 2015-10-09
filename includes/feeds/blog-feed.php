@@ -252,6 +252,7 @@ class Blog_Feed extends Feed {
 					// Build the event.
 					$events[ intval( $start_utc ) ][] = array(
 						'title'          => $post->post_title,
+						'source'         => get_bloginfo( 'name' ),
 						'description'    => $post->post_excerpt,
 						'link'           => get_permalink( $post->ID ),
 						'visibility'     => 'public',
