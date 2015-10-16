@@ -10,15 +10,19 @@ use SimpleCalendar\Feeds\Blog_Feed;
 
 /**
  * A Blog Feed add on for Simple Calendar.
+ *
+ * @since 1.0.0
  */
 class Add_On_Blog_Feed {
 
 	/**
 	 * Load plugin.
+	 *
+	 * @since 1.0.0
 	 */
 	public function __construct() {
 
-		register_activation_hook( SIMCAL_BLOG_FEED_MAIN_FILE, array( $this, 'activate' ) );
+		register_activation_hook( SIMPLE_CALENDAR_BLOG_FEED_MAIN_FILE, array( $this, 'activate' ) );
 
 		add_action( 'init', array( $this, 'l10n' ) );
 		add_action( 'plugins_loaded', array( $this, 'init' ) );
@@ -26,15 +30,21 @@ class Add_On_Blog_Feed {
 
 	/**
 	 * Load Localization files.
+	 *
+	 * @since  1.0.0
+	 *
+	 * @return void
 	 */
 	public function l10n() {
-		$locale = apply_filters( 'plugin_locale', get_locale(), 'simple-calendar-blog-feed' );
-		load_textdomain( 'simple-calendar-blog-feed', WP_LANG_DIR . '/simple-calendar-blog-feed/simple-calendar-blog-feed' . $locale . '.mo' );
-		load_plugin_textdomain( 'simple-calendar-blog-feed', false, plugin_basename( SIMCAL_BLOG_FEED_MAIN_FILE ) . 'languages' );
+		load_plugin_textdomain( 'simple-calendar-blog-feed', false, plugin_basename( SIMPLE_CALENDAR_BLOG_FEED_MAIN_FILE ) . '/languages/' );
 	}
 
 	/**
 	 * Init.
+	 *
+	 * @since  1.0.0
+	 *
+	 * @return void
 	 */
 	public function init() {
 		if ( class_exists( 'SimpleCalendar\Plugin' ) ) {
@@ -56,7 +66,11 @@ class Add_On_Blog_Feed {
 	}
 
 	/**
-	 * Upon plugin activation.
+	 * Upon plugin activation hook callback.
+	 *
+	 * @since  1.0.0
+	 *
+	 * @return void
 	 */
 	public static function activate() {
 		if ( ! get_term_by( 'slug', 'blog-feed', 'calendar_feed' ) ) {

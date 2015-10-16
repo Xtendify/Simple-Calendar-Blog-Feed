@@ -1,1 +1,42 @@
+### IDE ###
+
+# PhpStorm
 .idea
+
+# Netbeans
+nbproject
+
+# Sublime
+*.sublime-project
+*.sublime-workspace
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+
+### Development ###
+
+# Node
+node_modules
+
+# Logging
+*.log
+*.logs
+/log
+/logs
+*.tmp
+temp
+tmp
+/tmp
+
+### Build ###
+
+build
+
+### OS Files ###
+
+# OSX
+.DS_Store
+
+# Windows
+ehthumbs.db
+Thumbs.db

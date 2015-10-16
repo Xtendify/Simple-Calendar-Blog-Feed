@@ -9,7 +9,6 @@ namespace SimpleCalendar\Feeds;
 
 use Carbon\Carbon;
 use SimpleCalendar\Abstracts\Feed;
-use SimpleCalendar\Events\Event;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -140,7 +139,6 @@ class Blog_Feed extends Feed {
 									'attributes'  => array(
 										'data-noresults' => __( 'No results found.', 'simple-calendar-blog-feed' ),
 									)
-
 								) );
 
 							}
@@ -198,7 +196,7 @@ class Blog_Feed extends Feed {
 					'year'  => $end->year,
 					'month' => $end->month,
 					'day'   => $end->day,
-				)
+				),
 			);
 
 			$source = esc_attr( get_post_meta( $this->post_id, '_blog_feed_posts_source', true ) );
@@ -250,12 +248,13 @@ class Blog_Feed extends Feed {
 					$uid = $post_date_utc->format( 'Ymd' ) . $post->ID . '@' . $_SERVER['SERVER_NAME'];
 
 					// Build the event.
-					$events[ intval( $start_utc ) ][] = array(
+					$events[ intval( $start ) ][] = array(
+						'type'           => 'blog-feed',
 						'title'          => $post->post_title,
 						'source'         => get_bloginfo( 'name' ),
 						'description'    => $post->post_excerpt,
 						'link'           => get_permalink( $post->ID ),
-						'visibility'     => 'public',
+						'visibility'     => $post->post_status,
 						'uid'            => $uid,
 						'calendar'       => $this->post_id,
 						'timezone'       => $this->timezone,
@@ -270,7 +269,6 @@ class Blog_Feed extends Feed {
 						'whole_day'      => false,
 						'multiple_days'  => false,
 						'recurrence'     => false,
-						'meta'           => array(),
 						'template'       => $this->events_template,
 					);
 
