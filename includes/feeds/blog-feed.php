@@ -18,6 +18,8 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Blog Feed.
  *
  * A calendar feed using blog posts for events.
+ *
+ * @since 1.0.0
  */
 class Blog_Feed extends Feed {
 
@@ -31,6 +33,8 @@ class Blog_Feed extends Feed {
 
 	/**
 	 * Set properties.
+	 *
+	 * @since 1.0.0
 	 *
 	 * @param string|\SimpleCalendar\Abstracts\Calendar $calendar
 	 */
@@ -61,6 +65,8 @@ class Blog_Feed extends Feed {
 	/**
 	 * Add a tab to the settings meta box.
 	 *
+	 * @since  1.0.0
+	 *
 	 * @param  array $tabs
 	 *
 	 * @return array
@@ -81,6 +87,8 @@ class Blog_Feed extends Feed {
 
 	/**
 	 * Add a panel to the settings meta box.
+	 *
+	 * @since 1.0.0
 	 *
 	 * @param int $post_id
 	 */
@@ -156,6 +164,8 @@ class Blog_Feed extends Feed {
 	/**
 	 * Process meta fields.
 	 *
+	 * @since 1.0.0
+	 *
 	 * @param int $post_id
 	 */
 	public function process_meta( $post_id ) {
@@ -170,6 +180,8 @@ class Blog_Feed extends Feed {
 
 	/**
 	 * Set blog posts query args.
+	 *
+	 * @since 1.0.0
 	 *
 	 * @param array $args
 	 */
@@ -222,6 +234,8 @@ class Blog_Feed extends Feed {
 
 	/**
 	 * Get blog posts as events.
+	 *
+	 * @since 1.0.0
 	 */
 	public function get_events() {
 
