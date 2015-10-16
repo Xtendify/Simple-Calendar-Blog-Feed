@@ -124,8 +124,6 @@ module.exports = function( grunt ) {
 
 	require( 'load-grunt-tasks' )(grunt);
 
-	grunt.loadNpmTasks( 'grunt-composer' );
-
 	grunt.registerTask( 'localize', ['checktextdomain', 'makepot'] );
 	grunt.registerTask( 'build',    ['clean:build', 'copy', 'compress'] );
 	grunt.registerTask( 'deploy',   ['localize', 'build', 'wp_deploy'] );
