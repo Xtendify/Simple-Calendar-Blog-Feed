@@ -2,7 +2,7 @@
 Contributors: moonstonemedia pderksen, nickyoung87, nekojira
 Tags: simple-calendar, calendar, calendars, posts, blog-posts, blog-calendar, posts-calendar
 Requires at least: 3.9
-Tested up to: 4.3
+Tested up to: 4.3.1
 Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -20,6 +20,10 @@ You will need Simple Calendar (version 3.0.0 or above) installed and active to u
 Navigate to the WordPress plugins dashboard page, click on 'Add New', search for 'Simple Calendar Blog Feed', install and activate.
 
 Now you can create a new calendar featuring your blog posts or mix your blog posts with another calendar created with Simple Calendar's 'Grouped Calendars' feature.
+
+== Screenshots ==
+
+1. Select your WordPress blog posts as event source.
 
 == Changelog ==
 
