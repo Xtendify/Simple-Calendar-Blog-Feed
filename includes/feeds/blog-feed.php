@@ -251,6 +251,11 @@ class Blog_Feed extends Feed {
 
 			if ( ! empty( $posts ) && is_array( $posts ) ) {
 
+				// If no timezone has been set, use calendar feed.
+				if ( 'use_calendar' == $this->timezone_setting ) {
+					$this->timezone = simcal_get_wp_timezone();
+				}
+
 				foreach ( $posts as $post ) {
 
 					$post_date = Carbon::parse( $post->post_date, $timezone );
@@ -297,6 +302,11 @@ class Blog_Feed extends Feed {
 				);
 			}
 
+		}
+
+		// If no timezone has been set, use calendar feed.
+		if ( 'use_calendar' == $this->timezone_setting ) {
+			$this->timezone = simcal_get_wp_timezone();
 		}
 
 		return $events;
