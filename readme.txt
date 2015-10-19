@@ -23,7 +23,7 @@ Now you can create a new calendar featuring your blog posts or mix your blog pos
 
 == Screenshots ==
 
-1. Select your WordPress blog posts as event source.
+1. Select your WordPress blog posts as events source.
 
 == Changelog ==
 
