@@ -189,27 +189,25 @@ class Blog_Feed extends Feed {
 
 		if ( empty( $args ) ) {
 
-			$args = array(
-				'post_type' => 'post',
-				'posts_per_page'  => -1,
-			);
-
 			$timezone = ! empty( $this->timezone ) ? $this->timezone : simcal_get_wp_timezone();
 			$start = Carbon::createFromTimestamp( $this->time_min, $timezone );
 			$end = $this->time_max === 0 ? Carbon::now( $timezone ) : Carbon::createFromTimestamp( $this->time_max, $timezone );
 
-			$args['date_query'] = array(
-				'after' => array(
-					'year'  => $start->year,
-					'month' => $start->month,
-					'day'   => $start->day,
-				),
-				'before' => array(
-					'year'  => $end->year,
-					'month' => $end->month,
-					'day'   => $end->day,
-				),
-			);
+			$args = array(
+				'post_type'         => 'post',
+				'posts_per_page'    => -1,
+			    'date_query'        => array(
+				    'after' => array(
+						'year'  => $start->year,
+						'month' => $start->month,
+						'day'   => $start->day,
+					),
+					'before' => array(
+						'year'  => $end->year,
+						'month' => $end->month,
+						'day'   => $end->day,
+					),
+			) );
 
 			$source = esc_attr( get_post_meta( $this->post_id, '_blog_feed_posts_source', true ) );
 
@@ -219,11 +217,13 @@ class Blog_Feed extends Feed {
 
 				if ( $categories && is_array( $categories ) ) {
 
-					$args['tax_query'] = array(
-						'taxonomy' => 'category',
-						'field'    => 'term_id',
-						'terms'    => array_map( 'absint', $categories ),
-					);
+					$args = array_merge_recursive( $args, array(
+						'tax_query' => array(
+							'taxonomy' => 'category',
+							'field'    => 'term_id',
+							'terms'    => array_map( 'absint', $categories ),
+						),
+					) );
 				}
 			}
 
