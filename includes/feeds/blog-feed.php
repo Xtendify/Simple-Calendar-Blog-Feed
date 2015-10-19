@@ -88,9 +88,11 @@ class Blog_Feed extends Feed {
 	/**
 	 * Add a panel to the settings meta box.
 	 *
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 *
-	 * @param int $post_id
+	 * @param  int $post_id
+	 *
+	 * @return void
 	 */
 	public function add_settings_meta_panel( $post_id ) {
 
@@ -238,6 +240,8 @@ class Blog_Feed extends Feed {
 	 * Get blog posts as events.
 	 *
 	 * @since 1.0.0
+	 *
+	 * @return array
 	 */
 	public function get_events() {
 
