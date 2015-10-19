@@ -219,9 +219,11 @@ class Blog_Feed extends Feed {
 
 					$args = array_merge_recursive( $args, array(
 						'tax_query' => array(
-							'taxonomy' => 'category',
-							'field'    => 'term_id',
-							'terms'    => array_map( 'absint', $categories ),
+							array(
+								'taxonomy' => 'category',
+								'field'    => 'term_id',
+								'terms'    => array_map( 'absint', $categories ),
+							),
 						),
 					) );
 				}
