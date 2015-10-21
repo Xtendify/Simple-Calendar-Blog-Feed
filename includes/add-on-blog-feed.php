@@ -47,6 +47,7 @@ class Add_On_Blog_Feed {
 	 * @return void
 	 */
 	public function init() {
+
 		if ( class_exists( 'SimpleCalendar\Plugin' ) ) {
 
 			include_once 'feeds/blog-feed.php';
@@ -62,7 +63,16 @@ class Add_On_Blog_Feed {
 				new Blog_Feed();
 			} );
 
+		} else {
+
+			add_action( 'admin_notices', function() {
+				echo '<div class="error"><p>' .
+				     __( 'Blog Feed add-on requires Simple Calendar plugin installed and activated.', 'simple-calendar-blog-feed' ) .
+				     '</p></div>';
+			} );
+
 		}
+
 	}
 
 	/**
