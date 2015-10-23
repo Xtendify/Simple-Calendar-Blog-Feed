@@ -16,6 +16,14 @@ use SimpleCalendar\Feeds\Blog_Feed;
 class Add_On_Blog_Feed {
 
 	/**
+	 * Plugin add-on name.
+	 *
+	 * @access public
+	 * @var string
+	 */
+	public $name = 'Blog Feed';
+
+	/**
 	 * Load plugin.
 	 *
 	 * @since 1.0.0
@@ -65,9 +73,11 @@ class Add_On_Blog_Feed {
 
 		} else {
 
-			add_action( 'admin_notices', function() {
+			$name = $this->name;
+
+			add_action( 'admin_notices', function() use ( $name ) {
 				echo '<div class="error"><p>' .
-				     __( 'Blog Feed add-on requires Simple Calendar plugin installed and activated.', 'simple-calendar-blog-feed' ) .
+				     sprintf( __( 'The Simple Calendar %s add-on requires the Simple Calendar core plugin to be installed and activated.', 'simple-calendar-blog-feed' ), $name ) .
 				     '</p></div>';
 			} );
 
