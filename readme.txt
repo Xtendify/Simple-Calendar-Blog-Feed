@@ -1,17 +1,17 @@
 === Simple Calendar - Blog Feed ===
-Contributors: moonstonemedia pderksen, nickyoung87, nekojira
-Tags: simple-calendar, calendar, calendars, posts, blog-posts, blog-calendar, posts-calendar
+Contributors: moonstonemedia, pderksen, nickyoung87, nekojira
+Tags: simple calendar, calendar, calendars, posts, blog posts, blog calendar, posts calendar
 Requires at least: 4.0
 Tested up to: 4.4
 Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Use Simple Calendar to display your blog posts in a supercharged calendar.
+A Simple Calendar add-on to display your blog posts in a calendar view.
 
 == Description ==
 
-An add on for [Simple Calendar](http://simplecalendar.io) to create calendars featuring WordPress blog posts.
+A [Simple Calendar](http://simplecalendar.io) add-on WordPress plugin to display your blog posts in a calendar view.
 
 == Installation ==
 
