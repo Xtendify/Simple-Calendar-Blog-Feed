@@ -7,19 +7,21 @@ Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-A Simple Calendar add-on to display your blog posts in a calendar view.
+A Simple Calendar add-on to display your WordPress blog posts in a calendar view.
 
 == Description ==
 
-A [Simple Calendar](http://simplecalendar.io) add-on WordPress plugin to display your blog posts in a calendar view.
+A [Simple Calendar](http://simplecalendar.io) add-on to display your WordPress blog posts in a calendar view.
 
 == Installation ==
 
-You will need Simple Calendar (version 3.0.0 or above) installed and active to use this plugin add-on or it won't do anything. 
+[Add-on installation instructions](http://docs.simplecalendar.io/free-add-on-installation/?utm_source=wordpress.org&utm_medium=link&utm_campaign=blog-feed-readme&utm_content=installation)
 
-Navigate to the WordPress plugins dashboard page, click on 'Add New', search for 'Simple Calendar Blog Feed', install and activate.
+== Frequently Asked Questions ==
 
-Now you can create a new calendar featuring your blog posts or mix your blog posts with another calendar created with Simple Calendar's 'Grouped Calendars' feature.
+= Where's your plugin documentation? =
+
+[Blog Feed add-on docs](http://docs.simplecalendar.io/blog-feed/?utm_source=wordpress.org&utm_medium=link&utm_campaign=blog-feed-readme&utm_content=faq)
 
 == Screenshots ==
 
