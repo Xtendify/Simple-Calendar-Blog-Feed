@@ -1,20 +1,17 @@
 <?php
 /**
  * Plugin Name: Simple Calendar - Blog Feed
- * Plugin URI:  https://wordpress.org/plugins/simple-calendar-blog-feed/
- * Description: Display your WordPress blog posts as Simple Calendar events.
- *
+ * Plugin URI:  https://simplecalendar.io
+ * Description: A Simple Calendar add-on to display your WordPress blog posts in a calendar view.
  * Version:     1.0.0
- *
  * Author:      Moonstone Media
- * Author URI:  http://moonstonemediagroup.com
- *
+ * Author URI:  https://simplecalendar.io
  * Text Domain: simple-calendar-blog-feed
  * Domain Path: /languages/
  *
  * @package     SimpleCalendar/Extensions
  * @subpackage  BlogFeed
- * @copyright   2014-2015 Moonstone Media/Phil Derksen. All rights reserved.
+ * @copyright   2015 Moonstone Media/Phil Derksen. All rights reserved.
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
