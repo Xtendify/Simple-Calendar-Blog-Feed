@@ -11,7 +11,7 @@ A Simple Calendar add-on to display your WordPress blog posts in a calendar view
 
 == Description ==
 
-A [Simple Calendar](http://simplecalendar.io) add-on to display your WordPress blog posts in a calendar view.
+A [Simple Calendar](https://simplecalendar.io) add-on to display your WordPress blog posts in a calendar view.
 
 == Installation ==
 
