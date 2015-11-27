@@ -1,4 +1,4 @@
-=== Simple Calendar - Blog Feed ===
+=== Simple Calendar: Blog Feed ===
 Contributors: moonstonemedia, pderksen, nickyoung87, nekojira
 Tags: simple calendar, calendar, calendars, posts, blog posts, blog calendar, posts calendar
 Requires at least: 4.0
