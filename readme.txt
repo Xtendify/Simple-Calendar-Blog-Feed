@@ -29,5 +29,8 @@ A [Simple Calendar](https://simplecalendar.io) add-on to display your WordPress 
 
 == Changelog ==
 
-= 1.0.0 =
-* Initial Release.
+= 1.0.1 - TODO =
+* Tweak: Translations moved from .po/.mo files to official wordpress.org translation packs.
+
+= 1.0.0 - November 11, 2015 =
+* Initial release.
