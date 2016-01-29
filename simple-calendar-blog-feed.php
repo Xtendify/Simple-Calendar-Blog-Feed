@@ -7,11 +7,9 @@
  * Author:      Moonstone Media
  * Author URI:  https://simplecalendar.io
  * Text Domain: simple-calendar-blog-feed
- * Domain Path: /languages/
+ * Domain Path: i18n/
  *
- * @package     SimpleCalendar/Extensions
- * @subpackage  BlogFeed
- * @copyright   2015 Moonstone Media/Phil Derksen. All rights reserved.
+ * @copyright   2016 Moonstone Media/Phil Derksen. All rights reserved.
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
