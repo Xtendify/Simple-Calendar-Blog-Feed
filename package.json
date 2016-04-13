@@ -11,11 +11,11 @@
   },
   "keywords": [],
   "devDependencies": {
-    "grunt": "0.x",
+    "grunt": "1.x",
     "grunt-checktextdomain": "1.x",
     "grunt-contrib-clean": "0.x",
     "grunt-contrib-compress": "0.x",
-    "grunt-contrib-copy": "0.x",
+    "grunt-contrib-copy": "1.x",
     "load-grunt-tasks": "3.x"
   }
 }
