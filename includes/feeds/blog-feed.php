@@ -100,7 +100,7 @@ class Blog_Feed extends Feed {
 		<div id="blog-feed-settings-panel" class="simcal-panel">
 			<table>
 				<thead>
-					<tr><th colspan="2"><?php _e( 'Blog Feed settings', 'simple-calendar-blog-feed' ); ?></th></tr>
+					<tr><th colspan="2"><?php _e( 'Blog Feed Settings', 'simple-calendar-blog-feed' ); ?></th></tr>
 				</thead>
 				<tbody class="simcal-panel-section">
 					<tr class="simcal-panel-field">
