@@ -4,7 +4,7 @@
  * Plugin URI:  https://simplecalendar.io
  * Description: A Simple Calendar add-on to display your WordPress blog posts in a calendar view.
  * Version:     1.0.0
- * Author:      Moonstone Media
+ * Author:      SimpleCalendar
  * Author URI:  https://simplecalendar.io
  * Text Domain: simple-calendar-blog-feed
  * Domain Path: i18n/
