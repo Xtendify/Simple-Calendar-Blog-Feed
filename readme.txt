@@ -2,8 +2,8 @@
 Contributors: simplecalendar, pderksen, nickyoung87, nekojira
 Tags: simple calendar, calendar, calendars, posts, blog posts, blog calendar, posts calendar
 Requires at least: 4.0
-Tested up to: 4.4
-Stable tag: 1.0.1
+Tested up to: 6.3
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -28,6 +28,10 @@ A [Simple Calendar](https://simplecalendar.io) add-on to display your WordPress 
 1. Select your WordPress blog posts as events source.
 
 == Changelog ==
+
+= 1.0.2 =
+
+* Fix: Compatiblity with WP 6.3.
 
 = 1.0.1 =
 

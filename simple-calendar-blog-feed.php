@@ -3,8 +3,8 @@
  * Plugin Name: Simple Calendar - Blog Feed
  * Plugin URI:  https://simplecalendar.io
  * Description: A Simple Calendar add-on to display your WordPress blog posts in a calendar view.
- * Version:     1.0.1
- * Author:      SimpleCalendar
+ * Version:     1.0.2
+ * Author:      Simple Calendar
  * Author URI:  https://simplecalendar.io
  * Text Domain: simple-calendar-blog-feed
  * Domain Path: i18n/
