@@ -9,7 +9,7 @@
  * Text Domain: simple-calendar-blog-feed
  * Domain Path: i18n/
  *
- * @copyright   2016 Moonstone Media/Phil Derksen. All rights reserved.
+ * @copyright   2013-2023 Xtendify Technologies. All rights reserved.
  */
 
 if (!defined("ABSPATH")) {

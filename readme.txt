@@ -1,5 +1,5 @@
 === Simple Calendar: Blog Feed ===
-Contributors: simplecalendar, sureswiftcapital, pderksen, nickyoung87, nekojira
+Contributors: simplecalendar, pderksen, nickyoung87, nekojira
 Tags: simple calendar, calendar, calendars, posts, blog posts, blog calendar, posts calendar
 Requires at least: 4.0
 Tested up to: 4.4
@@ -29,7 +29,7 @@ A [Simple Calendar](https://simplecalendar.io) add-on to display your WordPress 
 
 == Changelog ==
 
-= 1.0.1 - TODO =
+= 1.0.1 =
 
 * Tweak: Translations moved from .po/.mo files to official wordpress.org translation packs.
 
