@@ -13,27 +13,30 @@ use SimpleCalendar\Feeds\Blog_Feed;
  *
  * @since 1.0.0
  */
-class Add_On_Blog_Feed {
-
+class Add_On_Blog_Feed
+{
 	/**
 	 * Plugin add-on name.
 	 *
 	 * @access public
 	 * @var string
 	 */
-	public $name = 'Blog Feed';
+	public $name = "Blog Feed";
 
 	/**
 	 * Load plugin.
 	 *
 	 * @since 1.0.0
 	 */
-	public function __construct() {
+	public function __construct()
+	{
+		register_activation_hook(SIMPLE_CALENDAR_BLOG_FEED_MAIN_FILE, [
+			$this,
+			"activate",
+		]);
 
-		register_activation_hook( SIMPLE_CALENDAR_BLOG_FEED_MAIN_FILE, array( $this, 'activate' ) );
-
-		add_action( 'init', array( $this, 'l10n' ) );
-		add_action( 'plugins_loaded', array( $this, 'init' ) );
+		add_action("init", [$this, "l10n"]);
+		add_action("plugins_loaded", [$this, "init"]);
 	}
 
 	/**
@@ -43,8 +46,13 @@ class Add_On_Blog_Feed {
 	 *
 	 * @return void
 	 */
-	public function l10n() {
-		load_plugin_textdomain( 'simple-calendar-blog-feed', false, plugin_basename( SIMPLE_CALENDAR_BLOG_FEED_MAIN_FILE ) . '/languages/' );
+	public function l10n()
+	{
+		load_plugin_textdomain(
+			"simple-calendar-blog-feed",
+			false,
+			plugin_basename(SIMPLE_CALENDAR_BLOG_FEED_MAIN_FILE) . "/languages/"
+		);
 	}
 
 	/**
@@ -54,35 +62,39 @@ class Add_On_Blog_Feed {
 	 *
 	 * @return void
 	 */
-	public function init() {
-
-		if ( class_exists( 'SimpleCalendar\Plugin' ) ) {
-
-			include_once 'feeds/blog-feed.php';
+	public function init()
+	{
+		if (class_exists("SimpleCalendar\Plugin")) {
+			include_once "feeds/blog-feed.php";
 
 			// Add new feed type.
-			add_filter( 'simcal_get_feed_types', function( $feed_types ) {
-				return array_merge( $feed_types, array(
-					'blog-feed',
-				) );
-			}, 10, 1 );
+			add_filter(
+				"simcal_get_feed_types",
+				function ($feed_types) {
+					return array_merge($feed_types, ["blog-feed"]);
+				},
+				10,
+				1
+			);
 
-			add_action( 'simcal_load_objects ', function() {
+			add_action("simcal_load_objects ", function () {
 				new Blog_Feed();
-			} );
-
+			});
 		} else {
-
 			$name = $this->name;
 
-			add_action( 'admin_notices', function() use ( $name ) {
+			add_action("admin_notices", function () use ($name) {
 				echo '<div class="error"><p>' .
-				     sprintf( __( 'The Simple Calendar %s add-on requires the Simple Calendar core plugin to be installed and activated.', 'simple-calendar-blog-feed' ), $name ) .
-				     '</p></div>';
-			} );
-
+					sprintf(
+						__(
+							"The Simple Calendar %s add-on requires the Simple Calendar core plugin to be installed and activated.",
+							"simple-calendar-blog-feed"
+						),
+						$name
+					) .
+					"</p></div>";
+			});
 		}
-
 	}
 
 	/**
@@ -92,12 +104,12 @@ class Add_On_Blog_Feed {
 	 *
 	 * @return void
 	 */
-	public static function activate() {
-		if ( ! get_term_by( 'slug', 'blog-feed', 'calendar_feed' ) ) {
-			wp_insert_term( 'blog-feed', 'calendar_feed' );
+	public static function activate()
+	{
+		if (!get_term_by("slug", "blog-feed", "calendar_feed")) {
+			wp_insert_term("blog-feed", "calendar_feed");
 		}
 	}
-
 }
 
 new Add_On_Blog_Feed();
