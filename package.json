@@ -1,8 +1,8 @@
 {
-  "name": "Simple-Calendar-Blog-Feed",
+  "name": "simple-calendar-blog-feed",
   "title": "Simple Calendar Blog Feed",
   "description": "Use WordPress blog posts as Simple Calendar events.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "GPL-2.0+",
   "homepage": "https://simplecalendar.io",
   "repository": {
@@ -11,11 +11,23 @@
   },
   "keywords": [],
   "devDependencies": {
-    "grunt": "1.x",
-    "grunt-checktextdomain": "1.x",
-    "grunt-contrib-clean": "1.x",
-    "grunt-contrib-compress": "1.x",
-    "grunt-contrib-copy": "1.x",
-    "load-grunt-tasks": "3.x"
+    "@prettier/plugin-php": "0.20.1",
+    "grunt": "1.6.1",
+    "grunt-checktextdomain": "1.0.1",
+    "grunt-contrib-clean": "2.0.1",
+    "grunt-contrib-compress": "2.0.0",
+    "grunt-contrib-copy": "1.0.0",
+    "load-grunt-tasks": "5.1.0",
+    "prettier": "3.0.2"
+  },
+  "scripts": {
+    "setup": "yarn",
+    "prebuild": "yarn setup",
+    "build": "grunt build",
+    "lint": "prettier --check . --plugin=@prettier/plugin-php",
+    "lint:fix": "prettier --write . --plugin=@prettier/plugin-php"
+  },
+  "engines": {
+    "node": ">=18.15.0"
   }
 }
