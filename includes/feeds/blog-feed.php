@@ -7,7 +7,7 @@
  */
 namespace SimpleCalendar\Feeds;
 
-use Carbon\Carbon;
+use SimpleCalendar\plugin_deps\Carbon\Carbon;
 use SimpleCalendar\Abstracts\Feed;
 
 if (!defined("ABSPATH")) {
